@@ -19,7 +19,7 @@ const SingleBusiness = async ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      {data?.map((business:Business) => (
+      {data?.map((business:any) => (
         <UpdateBusinessForm business={business} email={email} key={business.id}/>
       ))}
     </div>
