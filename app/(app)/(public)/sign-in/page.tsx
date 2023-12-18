@@ -10,15 +10,6 @@ export default function SignInPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleSignUp = async () => {
-    let { data, error } = await supabaseForClientComponent.auth.signUp({
-      email,
-      password,
-    });
-    router.push('/businesses');
-    router.refresh();
-  };
-
   const handleSignIn = async () => {
     if(!email || !password) {
       setError('Invalid credentials!');
@@ -77,13 +68,7 @@ export default function SignInPage() {
             >
               Sign in
             </button>
-            <button
-              onClick={handleSignUp}
-              className="w-full text-md text-white rounded-lg bg-gray-500 font-medium !px-2 !py-2.5 text-center dark:bg-gray-200 dark:text-black"
-            >
-              Sign up
-            </button>
-
+            
         </div>
       </div>
     </div>
