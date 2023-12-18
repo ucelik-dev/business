@@ -37,7 +37,6 @@ const UpdateBusinessForm = ({business, email}:{business: Business, email: String
   return (
     <form
           className="flex flex-col items-center justify-center gap-5"
-          key={business.id}
           onSubmit={handleSubmit}
         >
           {business.user_email === email ? (
