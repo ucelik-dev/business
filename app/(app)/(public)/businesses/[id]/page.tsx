@@ -2,7 +2,6 @@ import { supabaseWithServiceRoleForServer } from "@/lib/supabase.server";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import UpdateBusinessForm from "../UpdateBusinessForm";
-import { Business } from "@/types/types";
 
 const SingleBusiness = async ({ params }: { params: { id: string } }) => {
   const cookieStore = cookies();
