@@ -1,5 +1,3 @@
-import { env } from "@/lib/env.server";
-import Script from "next/script";
 import React from "react";
 import NavBar from "./(public)/components/Navbar";
 

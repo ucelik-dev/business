@@ -1,12 +1,11 @@
 "use client";
 
-import { env } from "@/lib/env.client";
 import { supabaseForClientComponent } from "@/lib/supabase.client";
 import * as Supabase from "@supabase/supabase-js";
 
 
 export async function authenticateUsingGoogle(): Promise<never> {
-  const redirectTo = `${env.NEXT_PUBLIC_ORIGIN}/api/supabase/auth/callback`;
+  const redirectTo = `${process.env.NEXT_PUBLIC_ORIGIN}/api/supabase/auth/callback`;
 
   console.error(``
     + `Add this redirect url to the Supabase settings.\n`
