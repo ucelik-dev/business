@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import UpdateBusinessForm from "../UpdateBusinessForm";
 import { Business } from "@/types/types";
 
-const SingleBusiness = async ({ params }: { params: { id: number } }) => {
+const SingleBusiness = async ({ params }: { params: { id: string } }) => {
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });
 
@@ -14,7 +14,7 @@ const SingleBusiness = async ({ params }: { params: { id: number } }) => {
   const { data } = await supabaseWithServiceRoleForServer
     .from("businesses")
     .select("*")
-    .eq("id", params.id);
+    .eq("id", parseInt(params.id));
 
 
   return (
